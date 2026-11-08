@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rabisco bottom menu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&amp;family=Literata:wght@400;600&amp;family=Shantell+Sans:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#555555}
+</style>
+</helmet>
+<div style="position: relative; width: 600px; height: 800px; box-sizing: border-box; background: #ffffff; color: #111111; font-family: 'Shantell Sans', 'Comic Sans MS', cursive; overflow: hidden; filter: {{filter}};">
+  <div style="position: absolute; left: 44px; right: 44px; top: 34px; font-family: Literata, Georgia, serif; font-size: 19px; line-height: 30px; text-align: justify;">
+    <p style="margin: 0;">There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs—commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land.</p>
+  </div>
+
+  <div style="position: absolute; left: 14px; right: 14px; bottom: 12px; box-sizing: border-box; background: #ffffff; border: 3.5px solid #111111; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; box-shadow: 3px 3px 0 #111111; padding: 12px 18px 8px; display: flex; flex-direction: column; gap: 4px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; min-height: 56px; gap: 14px;">
+      <span style="font-weight: 600; font-size: 20px; line-height: 26px; width: 130px;">font size</span>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <button aria-label="smaller" style="width: 52px; height: 52px; font: 700 24px/1 Gaegu, cursive; background: #ffffff; color: #111111; border: 2.5px solid #111111; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">a</button>
+        <span style="font-weight: 700; font-size: 28px; line-height: 30px; font-family: Gaegu, cursive; min-width: 40px; text-align: center;">19</span>
+        <button aria-label="bigger" style="width: 52px; height: 52px; font: 700 34px/1 Gaegu, cursive; background: #ffffff; color: #111111; border: 2.5px solid #111111; border-radius: 15px 225px 15px 255px / 225px 15px 255px 15px;">A</button>
+      </div>
+    </div>
+    <svg width="526" height="6" viewBox="0 0 400 6" preserveAspectRatio="none" aria-hidden="true"><path d="M0.00 3.84 C4.17 3.62 16.67 2.77 25.00 2.51 C33.33 2.25 41.67 2.04 50.00 2.27 C58.33 2.51 66.67 3.96 75.00 3.90 C83.33 3.84 91.67 2.08 100.00 1.92 C108.33 1.76 116.67 2.73 125.00 2.93 C133.33 3.14 141.67 3.10 150.00 3.16 C158.33 3.23 166.67 3.50 175.00 3.31 C183.33 3.12 191.67 2.00 200.00 2.01 C208.33 2.02 216.67 3.20 225.00 3.37 C233.33 3.53 241.67 2.90 250.00 3.00 C258.33 3.10 266.67 4.20 275.00 3.98 C283.33 3.76 291.67 1.63 300.00 1.68 C308.33 1.73 316.67 4.21 325.00 4.28 C333.33 4.35 341.67 2.15 350.00 2.08 C358.33 2.02 366.67 3.72 375.00 3.88 C383.33 4.03 395.83 3.16 400.00 3.02" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+
+    <sc-for list="{{groups}}" as="g" hint-placeholder-count="3">
+      <div style="display: flex; align-items: center; justify-content: space-between; min-height: 60px; gap: 14px; border-bottom: 1.5px dashed #888888;">
+        <span style="font-weight: 600; font-size: 20px; line-height: 26px; width: 130px;">{{g.label}}</span>
+        <div style="display: flex; gap: 8px;">
+          <sc-for list="{{g.options}}" as="o" hint-placeholder-count="3">
+            <button style="min-width: 92px; height: 46px; padding: 0 12px; font: 600 16px/1 'Shantell Sans', cursive; background: {{o.bg}}; color: {{o.fg}}; border: 2.5px solid {{o.border}}; border-radius: {{o.shape}}; box-shadow: {{o.shadow}};">{{o.name}}</button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; min-height: 60px; gap: 14px;">
+      <span style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 20px; line-height: 26px; width: 130px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.70 15.62 C13.16 15.60 11.41 15.91 10.50 15.52 C9.58 15.14 8.56 14.21 8.20 13.28 C7.85 12.35 7.89 10.84 8.37 9.95 C8.86 9.06 10.12 8.14 11.12 7.94 C12.12 7.75 13.52 8.16 14.35 8.76 C15.18 9.37 15.99 10.58 16.11 11.58 C16.22 12.59 15.73 14.06 15.04 14.78 C14.35 15.50 12.47 15.70 11.96 15.89"/><path d="M18.45 11.49 C18.64 11.46 19.23 11.39 19.59 11.36 C19.95 11.32 20.43 11.28 20.60 11.26"/><path d="M16.14 17.03 C16.25 17.21 16.60 17.69 16.83 18.07 C17.06 18.44 17.41 19.06 17.53 19.26"/><path d="M11.54 18.45 C11.51 18.67 11.44 19.35 11.40 19.77 C11.35 20.20 11.29 20.79 11.27 21.00"/><path d="M7.33 16.32 C7.13 16.43 6.49 16.74 6.10 16.99 C5.71 17.24 5.20 17.68 5.01 17.81"/><path d="M5.46 12.51 C5.26 12.54 4.70 12.63 4.26 12.67 C3.82 12.72 3.050 12.76 2.81 12.78"/><path d="M7.15 7.69 C6.95 7.56 6.33 7.18 5.96 6.90 C5.59 6.63 5.12 6.17 4.95 6.03"/><path d="M12.03 5.42 C12.05 5.26 12.12 4.78 12.12 4.46 C12.13 4.13 12.06 3.64 12.05 3.48"/><path d="M16.16 7.12 C16.28 6.92 16.63 6.32 16.87 5.93 C17.11 5.55 17.50 5.00 17.62 4.81"/></svg>
+        light
+      </span>
+      <div style="flex-grow: 1; display: flex; align-items: center; gap: 10px;">
+        <svg width="280" height="28" viewBox="0 0 400 28" preserveAspectRatio="none" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M4.00 8.63 C6.33 10.37 13.33 18.95 18.00 19.07 C22.67 19.18 27.33 9.22 32.00 9.33 C36.67 9.44 41.33 19.82 46.00 19.73 C50.67 19.64 55.33 8.90 60.00 8.79 C64.67 8.68 69.33 19.05 74.00 19.05 C78.67 19.05 83.33 8.79 88.00 8.80 C92.67 8.80 97.33 18.96 102.00 19.08 C106.67 19.20 111.33 9.43 116.00 9.55 C120.67 9.66 125.33 19.77 130.00 19.79 C134.67 19.81 139.33 9.70 144.00 9.69 C148.67 9.67 153.33 19.93 158.00 19.70 C162.67 19.47 167.33 8.47 172.00 8.29 C176.67 8.10 181.33 18.35 186.00 18.59 C190.67 18.82 195.33 9.63 200.00 9.71 C204.67 9.80 209.33 19.31 214.00 19.10 C218.67 18.89 223.33 8.42 228.00 8.43 C232.67 8.45 237.33 18.98 242.00 19.19 C246.67 19.40 251.33 9.80 256.00 9.70 C260.67 9.59 265.33 18.73 270.00 18.57 C274.67 18.41 279.33 8.78 284.00 8.77 C288.67 8.75 293.33 18.31 298.00 18.48 C302.67 18.64 307.33 9.76 312.00 9.76 C316.67 9.77 321.33 18.72 326.00 18.53 C330.67 18.33 335.33 8.65 340.00 8.61 C344.67 8.58 349.33 18.37 354.00 18.33 C358.67 18.28 363.33 8.38 368.00 8.36 C372.67 8.35 377.33 18.25 382.00 18.23 C386.67 18.20 393.67 9.88 396.00 8.21" stroke="#888888" stroke-width="1.5" stroke-dasharray="3 5" vector-effect="non-scaling-stroke"/><path d="M4.00 8.63 C6.33 10.37 13.33 18.95 18.00 19.07 C22.67 19.18 27.33 9.22 32.00 9.33 C36.67 9.44 41.33 19.82 46.00 19.73 C50.67 19.64 55.33 8.90 60.00 8.79 C64.67 8.68 69.33 19.05 74.00 19.05 C78.67 19.05 83.33 8.79 88.00 8.80 C92.67 8.80 97.33 18.96 102.00 19.08 C106.67 19.20 111.33 9.43 116.00 9.55 C120.67 9.66 125.33 19.77 130.00 19.79 C134.67 19.81 139.33 9.70 144.00 9.69 C148.67 9.67 153.33 19.93 158.00 19.70 C162.67 19.47 167.33 8.47 172.00 8.29 C176.67 8.10 181.33 18.35 186.00 18.59 C190.67 18.82 195.33 9.63 200.00 9.71 C204.67 9.80 209.33 19.31 214.00 19.10 C218.67 18.89 223.33 8.42 228.00 8.43" stroke="#111111" stroke-width="3.5" vector-effect="non-scaling-stroke"/></svg>
+        <span style="font-weight: 600; font-size: 13px; letter-spacing: 0.04em;">14</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"night":{"editor":"boolean","default":false},"$preview":{"width":600,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var A = '255px 15px 225px 15px / 15px 225px 15px 255px';
+    var B = '15px 225px 15px 255px / 225px 15px 255px 15px';
+    var groups = [
+      { label: 'line spacing', names: ['tight', 'normal', 'loose'], on: 2 },
+      { label: 'margins', names: ['small', 'medium', 'wide'], on: 1 },
+      { label: 'alignment', names: ['left', 'justify'], on: 1 }
+    ];
+    return {
+      filter: this.props.night ? 'invert(1)' : 'none',
+      groups: groups.map(function (g) {
+        return {
+          label: g.label,
+          options: g.names.map(function (n, i) {
+            var sel = i === g.on;
+            return {
+              name: n,
+              bg: sel ? '#111111' : '#ffffff',
+              fg: sel ? '#ffffff' : '#111111',
+              border: sel ? '#111111' : '#888888',
+              shadow: sel ? '2px 2px 0 #111111' : 'none',
+              shape: i % 2 ? B : A
+            };
+          })
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

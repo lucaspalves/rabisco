@@ -29,4 +29,4 @@ Rabisco is built in stages, from safe look changes to deeper drawing changes. Ea
 ## Design references
 
 - Design system (tokens, components, brand book): `design/`
-- Screen mockups: the "Rabisco Kindle Screens" canvas
+- Screen mockups: `design/screens/` (sources) and `docs/screens/` (images, shown in the README)

@@ -4,6 +4,33 @@ A naive, hand-drawn skin for [KOReader](https://koreader.rocks) on Kindle. Marke
 
 *Rabisco* is Portuguese for "scribble".
 
+## Screens
+
+The full Rabisco look, as designed. Stage 1 (below) already brings the fonts, icons, marker lines and sleep screens; the wobbly frames, hatching and stickers arrive in later stages ([roadmap](docs/ROADMAP.md)).
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screens/main.png" width="200" alt="Library: book list with hatched covers, squiggle progress and new stickers"><br><sub>library</sub></td>
+    <td align="center"><img src="docs/screens/reading.png" width="200" alt="Reading page in Literata with a hand-drawn status bar"><br><sub>reading</sub></td>
+    <td align="center"><img src="docs/screens/topmenu.png" width="200" alt="Top menu with hand-drawn tab icons and the font and text page"><br><sub>top menu</sub></td>
+    <td align="center"><img src="docs/screens/fontmenu.png" width="200" alt="Bottom menu with font size, line spacing, margins and light"><br><sub>bottom menu</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screens/settings.png" width="200" alt="Settings with wobbly toggles and scribbled checkboxes"><br><sub>settings</sub></td>
+    <td align="center"><img src="docs/screens/feeds.png" width="200" alt="News feeds list with unread stickers"><br><sub>news feeds</sub></td>
+    <td align="center"><img src="docs/screens/dialog.png" width="200" alt="Wi-fi dialog over a hatched screen"><br><sub>dialog</sub></td>
+    <td align="center"><img src="docs/screens/sleep.png" width="200" alt="Sleep screen: shh… sleeping, with the current book"><br><sub>sleep screen</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screens/main-night.png" width="200" alt="Library in night mode"><br><sub>library · night</sub></td>
+    <td align="center"><img src="docs/screens/reading-night.png" width="200" alt="Reading page in night mode"><br><sub>reading · night</sub></td>
+    <td align="center"><img src="docs/screens/topmenu-night.png" width="200" alt="Top menu in night mode"><br><sub>top menu · night</sub></td>
+    <td align="center"><img src="docs/screens/settings-night.png" width="200" alt="Settings in night mode"><br><sub>settings · night</sub></td>
+  </tr>
+</table>
+
+Night mode is an exact inversion, the same thing KOReader's own night mode does, so the palette is built to survive it.
+
 ## What's in this version
 
 | Part | What it does | Where it goes |
@@ -57,7 +84,7 @@ Each patch has a small settings block at the top. For example, in `2-rabisco-fon
 ## For developers
 
 ```
-design/     the design system: tokens, brand book, original icons and doodles
+design/     the design system: tokens, brand book, icons, doodles and screen mockups (screens/)
 koreader/   files that go on the device
 tools/      scripts that build the fonts, icons and sleep screens
 tests/      a harness that runs the patches against stand-in KOReader modules
@@ -70,6 +97,7 @@ Rebuild everything:
 python3 tools/build_fonts.py <path to google/fonts>/ofl koreader/fonts/rabisco   # needs fonttools
 python3 tools/koreader_icons.py koreader/icons
 python3 tools/render_sleep.py koreader/screensaver                              # needs playwright + the fonts installed
+python3 tools/render_screens.py design/screens docs/screens                     # README images, same needs
 texlua tests/patch_harness.lua koreader/patches present                         # any Lua 5.1+
 ```
 

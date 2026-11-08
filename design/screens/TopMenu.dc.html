@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rabisco top menu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&amp;family=Literata:wght@400;600&amp;family=Shantell+Sans:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#555555}
+</style>
+</helmet>
+<div style="position: relative; width: 600px; height: 800px; box-sizing: border-box; background: #ffffff; color: #111111; font-family: 'Shantell Sans', 'Comic Sans MS', cursive; overflow: hidden; filter: {{filter}};">
+  <div style="position: absolute; left: 44px; right: 44px; top: 470px; font-family: Literata, Georgia, serif; font-size: 19px; line-height: 30px; text-align: justify; color: #111111;">
+    <p style="margin: 0;">and methodically knocking people’s hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.</p>
+  </div>
+
+  <div style="position: absolute; left: 14px; right: 14px; top: 10px; box-sizing: border-box; background: #eeeeee; border: 3.5px solid #111111; border-radius: 15px 225px 15px 255px / 225px 15px 255px 15px; box-shadow: 3px 3px 0 #111111; padding: 6px 14px 14px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 2px 0 8px;">
+      <button aria-label="table of contents" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: 3.5px solid transparent; padding: 0;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.58 6.64 l0.15 0.05"/><path d="M8.51 6.52 C9.43 6.54 12.15 6.61 14.02 6.63 C15.90 6.66 18.79 6.66 19.74 6.67"/><path d="M4.70 11.96 l0.15 0.05"/><path d="M8.55 11.98 C9.20 11.93 11.15 11.65 12.47 11.69 C13.80 11.73 15.81 12.12 16.48 12.21"/><path d="M4.47 17.65 l0.15 0.05"/><path d="M8.35 17.46 C9.22 17.39 11.86 17.05 13.59 17.03 C15.32 17.01 17.89 17.29 18.75 17.35"/></svg>
+      </button>
+      <button aria-label="page and layout" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: 3.5px solid transparent; padding: 0;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.50 3.60 L14.51 3.69 L18.82 8.02 L18.67 14.24 L18.60 20.52 L12.06 20.47 L5.67 20.34 L5.59 14.59 L5.60 9.06 L5.38 3.42 L6.10 3.51"/><path d="M14.35 3.71 L14.29 8.29 L18.63 8.07"/><path d="M8.20 11.96 C8.84 11.96 10.80 11.96 12.07 12.00 C13.35 12.03 15.21 12.14 15.83 12.17"/><path d="M8.34 15.62 C8.81 15.63 10.27 15.71 11.18 15.69 C12.09 15.67 13.37 15.55 13.81 15.52"/></svg>
+      </button>
+      <button aria-label="font and text, selected" style="width: 56px; height: 56px; display: grid; place-items: center; background: #ffffff; border: 3.5px solid #111111; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; padding: 0;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.76 19.43 L4.42 14.70 L6.22 9.58 L7.93 4.80 L9.80 9.62 L11.38 14.43 L13.31 19.34"/><path d="M4.80 14.24 C5.33 14.20 6.88 14.00 7.97 13.99 C9.07 13.98 10.80 14.14 11.36 14.17"/><path d="M20.16 15.32 C20.18 15.70 20.54 16.95 20.28 17.60 C20.01 18.26 19.25 19.02 18.56 19.26 C17.88 19.50 16.80 19.38 16.17 19.02 C15.55 18.67 14.99 17.80 14.82 17.11 C14.66 16.41 14.82 15.44 15.20 14.85 C15.58 14.26 16.41 13.70 17.10 13.57 C17.79 13.44 18.79 13.66 19.35 14.08 C19.91 14.51 20.28 15.77 20.46 16.11"/><path d="M20.63 12.23 C20.63 12.86 20.61 14.74 20.62 16.01 C20.63 17.28 20.69 19.20 20.71 19.84"/></svg>
+      </button>
+      <button aria-label="settings" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: 3.5px solid transparent; padding: 0;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.36 6.04 C4.18 6.03 6.62 6.01 8.25 6.03 C9.88 6.05 12.31 6.14 13.12 6.17"/><path d="M18.05 5.95 C18.26 5.95 18.86 5.94 19.29 5.96 C19.72 5.98 20.41 6.05 20.64 6.06"/><path d="M17.24 7.65 C16.97 7.76 16.19 8.29 15.64 8.33 C15.10 8.36 14.41 8.18 13.99 7.85 C13.56 7.52 13.19 6.86 13.12 6.33 C13.05 5.80 13.27 5.08 13.59 4.66 C13.91 4.24 14.52 3.89 15.03 3.80 C15.54 3.70 16.22 3.81 16.64 4.08 C17.07 4.34 17.45 4.89 17.60 5.38 C17.76 5.88 17.79 6.59 17.57 7.03 C17.35 7.48 16.49 7.89 16.28 8.06"/><path d="M3.43 11.98 C3.60 11.99 4.14 12.03 4.49 12.06 C4.84 12.09 5.36 12.15 5.53 12.17"/><path d="M10.33 12.15 C11.20 12.14 13.84 12.11 15.55 12.09 C17.26 12.07 19.77 12.05 20.61 12.04"/><path d="M5.80 12.27 C5.87 12.01 5.92 11.12 6.22 10.71 C6.51 10.30 7.07 9.88 7.56 9.79 C8.05 9.69 8.70 9.87 9.15 10.14 C9.59 10.40 10.07 10.89 10.22 11.38 C10.37 11.87 10.31 12.62 10.07 13.07 C9.82 13.52 9.26 13.93 8.76 14.11 C8.26 14.29 7.56 14.34 7.09 14.14 C6.62 13.94 6.12 13.40 5.92 12.93 C5.72 12.45 5.89 11.55 5.88 11.28"/><path d="M3.47 18.03 C4.08 18.03 5.88 18.01 7.13 18.02 C8.37 18.04 10.31 18.10 10.94 18.11"/><path d="M16.08 17.93 C16.45 17.93 17.55 17.92 18.29 17.93 C19.04 17.93 20.17 17.96 20.55 17.97"/><path d="M11.93 16.22 C12.20 16.12 13.04 15.59 13.56 15.62 C14.08 15.66 14.65 16.06 15.03 16.43 C15.40 16.81 15.77 17.38 15.81 17.88 C15.84 18.39 15.56 19.05 15.22 19.44 C14.88 19.84 14.29 20.21 13.78 20.27 C13.28 20.33 12.61 20.13 12.19 19.82 C11.77 19.52 11.39 18.95 11.28 18.45 C11.17 17.94 11.27 17.25 11.53 16.80 C11.80 16.35 12.64 15.92 12.87 15.74"/></svg>
+      </button>
+      <button aria-label="tools" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: 3.5px solid transparent; padding: 0;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.21 8.43 C20.16 8.82 20.26 10.10 19.93 10.75 C19.61 11.41 18.87 11.92 18.26 12.36 C17.64 12.81 16.96 13.26 16.23 13.43 C15.50 13.60 14.56 13.63 13.89 13.37 C13.21 13.10 12.68 12.39 12.16 11.84 C11.63 11.29 11.02 10.75 10.75 10.07 C10.48 9.39 10.40 8.50 10.52 7.75 C10.63 7.01 10.97 6.18 11.44 5.59 C11.90 5.00 12.64 4.49 13.33 4.22 C14.01 3.96 15.19 4.03 15.57 3.99"/><path d="M12.41 11.51 C11.69 12.15 9.44 14.03 8.08 15.37 C6.71 16.71 4.87 18.85 4.22 19.54"/><path d="M14.59 13.84 C13.87 14.43 11.65 16.11 10.27 17.37 C8.89 18.63 6.98 20.73 6.32 21.40"/></svg>
+      </button>
+      <button aria-label="search" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: 3.5px solid transparent; padding: 0;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.85 5.08 C12.31 5.30 13.93 5.72 14.63 6.43 C15.33 7.13 15.93 8.32 16.03 9.30 C16.13 10.28 15.64 11.37 15.24 12.32 C14.83 13.27 14.39 14.39 13.61 14.99 C12.83 15.60 11.56 15.95 10.55 15.95 C9.54 15.96 8.41 15.54 7.55 15.02 C6.70 14.50 5.91 13.68 5.43 12.81 C4.94 11.94 4.56 10.79 4.63 9.81 C4.70 8.83 5.22 7.74 5.82 6.93 C6.42 6.12 7.30 5.34 8.21 4.96 C9.13 4.58 10.37 4.42 11.32 4.63 C12.28 4.85 13.49 5.99 13.92 6.26"/><path d="M14.54 14.50 C14.98 15.01 16.26 16.61 17.18 17.58 C18.10 18.55 19.59 19.87 20.07 20.33"/></svg>
+      </button>
+      <button aria-label="main menu" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: 3.5px solid transparent; padding: 0;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.81 7.00 C5.13 7.02 9.15 7.19 11.76 7.12 C14.37 7.06 18.18 6.71 19.47 6.63"/><path d="M4.40 12.16 C5.46 12.12 8.62 11.93 10.74 11.90 C12.86 11.88 16.06 11.98 17.13 12.00"/><path d="M3.88 17.22 C5.25 17.25 9.34 17.34 12.05 17.41 C14.77 17.49 18.80 17.63 20.15 17.67"/></svg>
+      </button>
+    </div>
+    <svg width="538" height="6" viewBox="0 0 400 6" preserveAspectRatio="none" aria-hidden="true"><path d="M0.00 3.84 C4.17 3.62 16.67 2.77 25.00 2.51 C33.33 2.25 41.67 2.04 50.00 2.27 C58.33 2.51 66.67 3.96 75.00 3.90 C83.33 3.84 91.67 2.08 100.00 1.92 C108.33 1.76 116.67 2.73 125.00 2.93 C133.33 3.14 141.67 3.10 150.00 3.16 C158.33 3.23 166.67 3.50 175.00 3.31 C183.33 3.12 191.67 2.00 200.00 2.01 C208.33 2.02 216.67 3.20 225.00 3.37 C233.33 3.53 241.67 2.90 250.00 3.00 C258.33 3.10 266.67 4.20 275.00 3.98 C283.33 3.76 291.67 1.63 300.00 1.68 C308.33 1.73 316.67 4.21 325.00 4.28 C333.33 4.35 341.67 2.15 350.00 2.08 C358.33 2.02 366.67 3.72 375.00 3.88 C383.33 4.03 395.83 3.16 400.00 3.02" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+    <h2 style="margin: 0; padding: 10px 4px 6px; font-family: Gaegu, cursive; font-weight: 700; font-size: 28px; line-height: 30px;">font &amp; text</h2>
+    <sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+      <div style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; background: {{r.bg}}; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; border-bottom: 1.5px dashed #888888;">
+        <span style="font-size: 18px; line-height: 26px;">{{r.label}}</span>
+        <span style="font-size: 15px; line-height: 20px; color: #555555;">{{r.value}}</span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"night":{"editor":"boolean","default":false},"$preview":{"width":600,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var rows = [
+      ['font face', 'literata ›'], ['font size', '19 ›'], ['font weight', 'regular ›'],
+      ['line spacing', 'loose ›'], ['hyphenation', 'on ›'], ['embedded fonts', 'ignore ›']
+    ];
+    return {
+      filter: this.props.night ? 'invert(1)' : 'none',
+      rows: rows.map(function (r, i) { return { label: r[0], value: r[1], bg: i === 1 ? '#dddddd' : 'transparent' }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

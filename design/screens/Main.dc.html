@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rabisco library</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&amp;family=Literata:wght@400;600&amp;family=Shantell+Sans:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#555555}
+</style>
+</helmet>
+<div style="width: 600px; height: 800px; box-sizing: border-box; background: #ffffff; color: #111111; font-family: 'Shantell Sans', 'Comic Sans MS', cursive; display: flex; flex-direction: column; padding: 14px 20px 10px; filter: {{filter}};">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px;">
+    <button aria-label="main menu" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: none; padding: 0;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.81 7.00 C5.13 7.02 9.15 7.19 11.76 7.12 C14.37 7.06 18.18 6.71 19.47 6.63"/><path d="M4.40 12.16 C5.46 12.12 8.62 11.93 10.74 11.90 C12.86 11.88 16.06 11.98 17.13 12.00"/><path d="M3.88 17.22 C5.25 17.25 9.34 17.34 12.05 17.41 C14.77 17.49 18.80 17.63 20.15 17.67"/></svg>
+    </button>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+      <h1 style="margin: 0; font-family: Gaegu, cursive; font-weight: 700; font-size: 40px; line-height: 40px;">my library</h1>
+      <svg width="80" height="16" viewBox="0 0 48 48" preserveAspectRatio="none" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4.00 16.85 C4.83 19.43 7.33 32.33 9.00 32.34 C10.67 32.35 12.33 17.01 14.00 16.92 C15.67 16.83 17.33 31.65 19.00 31.80 C20.67 31.96 22.33 17.79 24.00 17.87 C25.67 17.96 27.33 32.57 29.00 32.30 C30.67 32.03 32.33 16.33 34.00 16.26 C35.67 16.19 37.33 31.73 39.00 31.89 C40.67 32.05 43.17 19.67 44.00 17.22"/></svg>
+    </div>
+    <button aria-label="search" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: none; padding: 0;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.85 5.08 C12.31 5.30 13.93 5.72 14.63 6.43 C15.33 7.13 15.930 8.32 16.03 9.30 C16.13 10.28 15.64 11.37 15.24 12.32 C14.83 13.27 14.39 14.39 13.61 14.99 C12.83 15.60 11.56 15.95 10.55 15.95 C9.54 15.96 8.41 15.54 7.55 15.02 C6.70 14.50 5.91 13.68 5.43 12.81 C4.94 11.94 4.56 10.79 4.63 9.81 C4.70 8.83 5.22 7.74 5.82 6.93 C6.42 6.12 7.30 5.34 8.21 4.96 C9.13 4.58 10.37 4.42 11.32 4.63 C12.28 4.85 13.49 5.99 13.92 6.26"/><path d="M14.54 14.50 C14.98 15.01 16.26 16.61 17.18 17.58 C18.10 18.55 19.59 19.87 20.07 20.33"/></svg>
+    </button>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 4px 4px;">
+    <span style="font-size: 15px; line-height: 20px; color: #555555;">home / books</span>
+    <span style="font-size: 15px; line-height: 20px; color: #555555;">sorted by last read</span>
+  </div>
+  <svg width="560" height="6" viewBox="0 0 400 6" preserveAspectRatio="none" aria-hidden="true"><path d="M0.00 3.84 C4.17 3.62 16.67 2.77 25.00 2.51 C33.33 2.25 41.67 2.04 50.00 2.27 C58.33 2.51 66.67 3.96 75.00 3.90 C83.33 3.84 91.67 2.08 100.00 1.92 C108.33 1.76 116.67 2.730 125.00 2.93 C133.33 3.14 141.67 3.10 150.00 3.16 C158.33 3.23 166.67 3.50 175.00 3.31 C183.33 3.12 191.67 2.00 200.00 2.01 C208.33 2.02 216.67 3.20 225.00 3.37 C233.33 3.53 241.67 2.90 250.00 3.00 C258.33 3.10 266.67 4.20 275.00 3.98 C283.33 3.76 291.67 1.63 300.00 1.68 C308.33 1.73 316.67 4.21 325.00 4.28 C333.33 4.35 341.67 2.15 350.00 2.08 C358.33 2.02 366.67 3.72 375.00 3.88 C383.33 4.03 395.83 3.16 400.00 3.02" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+
+  <div style="display: flex; flex-direction: column; flex-grow: 1;">
+    <sc-for list="{{books}}" as="b" hint-placeholder-count="6">
+      <div style="display: flex; align-items: center; gap: 14px; height: 88px; border-bottom: 1.5px dashed #888888;">
+        <div style="width: 46px; height: 62px; flex: none; display: grid; place-items: center; background-color: #ffffff; background-image: repeating-linear-gradient(-45deg, #888888 0 1.5px, transparent 1.5px 8px); border: 2.5px solid #111111; border-radius: {{b.shape}}; box-shadow: 2px 2px 0 #111111;">
+          <span style="font-family: Gaegu, cursive; font-weight: 700; font-size: 30px; line-height: 1; background: #ffffff; padding: 0 4px 2px; border-radius: 6px;">{{b.initial}}</span>
+        </div>
+        <div style="flex-grow: 1; min-width: 0;">
+          <div style="font-size: 18px; line-height: 26px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{b.title}}</div>
+          <div style="font-size: 15px; line-height: 20px; color: #555555;">{{b.author}}</div>
+        </div>
+        <sc-if value="{{b.reading}}" hint-placeholder-val="{{true}}">
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+            <svg width="76" height="12" viewBox="0 0 76 12" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M2 6 C5 3 8 3 11 6 S17 9 20 6 S26 3 29 6 S35 9 38 6 S44 3 47 6 S53 9 56 6 S62 3 65 6 S71 9 74 6" stroke="#888888" stroke-width="1.5" stroke-dasharray="2 4"/><path d="M2 6 C5 3 8 3 11 6 S17 9 20 6 S26 3 29 6 S35 9 38 6 S44 3 47 6 S53 9 56 6 S62 3 65 6 S71 9 74 6" stroke="#111111" stroke-width="3.5" pathLength="100" stroke-dasharray="{{b.dash}}"/></svg>
+            <span style="font-size: 15px; line-height: 20px; color: #555555;">{{b.pct}}</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{b.isNew}}" hint-placeholder-val="{{false}}">
+          <span style="display: inline-block; font-weight: 600; font-size: 13px; line-height: 16px; letter-spacing: 0.04em; padding: 2px 8px 3px; background: #111111; color: #ffffff; border-radius: 6px; box-shadow: 2px 2px 0 #111111; transform: rotate(-2deg);">new</span>
+        </sc-if>
+        <sc-if value="{{b.done}}" hint-placeholder-val="{{false}}">
+          <span style="display: flex; align-items: center; gap: 4px; font-size: 15px; color: #555555;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.97 3.57 L14.26 9.46 L20.59 9.86 L15.67 13.80 L17.28 19.98 L11.99 16.50 L6.74 19.90 L8.21 13.83 L3.40 9.79 L9.80 9.40 L11.94 3.63 L12.22 4.16"/></svg>
+            done
+          </span>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 56px;">
+    <button aria-label="previous page" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: none; padding: 0;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.05 12.39 C18.78 12.26 14.98 11.68 12.39 11.62 C9.80 11.55 5.84 11.94 4.53 12.00"/><path d="M10.14 6.05 L4.22 11.90 L10.71 18.28"/></svg>
+    </button>
+    <span style="font-weight: 600; font-size: 13px; letter-spacing: 0.04em;">page 1 of 3 · 17 books</span>
+    <button aria-label="next page" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: none; padding: 0;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: scaleX(-1);"><path d="M20.05 12.39 C18.78 12.26 14.98 11.68 12.39 11.62 C9.80 11.55 5.84 11.94 4.53 12.00"/><path d="M10.14 6.05 L4.22 11.90 L10.71 18.28"/></svg>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"night":{"editor":"boolean","default":false},"$preview":{"width":600,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var A = '255px 15px 225px 15px / 15px 225px 15px 255px';
+    var B = '15px 225px 15px 255px / 225px 15px 255px 15px';
+    var list = [
+      { initial: 'w', title: 'a wizard of earthsea', author: 'ursula k. le guin', p: 42 },
+      { initial: 'g', title: 'gödel, escher, bach', author: 'douglas hofstadter', p: 67 },
+      { initial: 't', title: 'the dispossessed', author: 'ursula k. le guin', state: 'new' },
+      { initial: 'z', title: 'zen and the art of motorcycle maintenance', author: 'robert m. pirsig', p: 12 },
+      { initial: 'm', title: 'the master and margarita', author: 'mikhail bulgakov', state: 'new' },
+      { initial: 's', title: 'solaris', author: 'stanisław lem', state: 'done' }
+    ];
+    return {
+      filter: this.props.night ? 'invert(1)' : 'none',
+      books: list.map(function (b, i) {
+        return {
+          initial: b.initial, title: b.title, author: b.author,
+          shape: i % 2 ? B : A,
+          reading: !b.state, isNew: b.state === 'new', done: b.state === 'done',
+          dash: (b.p || 0) + ' 200', pct: (b.p || 0) + '%'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rabisco news feeds</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&amp;family=Literata:wght@400;600&amp;family=Shantell+Sans:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#555555}
+</style>
+</helmet>
+<div style="width: 600px; height: 800px; box-sizing: border-box; background: #ffffff; color: #111111; font-family: 'Shantell Sans', 'Comic Sans MS', cursive; display: flex; flex-direction: column; padding: 14px 20px 14px; filter: {{filter}};">
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <button aria-label="go back" style="width: 56px; height: 56px; display: grid; place-items: center; background: none; border: none; padding: 0;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.05 12.39 C18.78 12.26 14.98 11.68 12.39 11.62 C9.80 11.55 5.84 11.94 4.53 12.00"/><path d="M10.14 6.05 L4.22 11.90 L10.71 18.28"/></svg>
+    </button>
+    <h1 style="margin: 0; flex-grow: 1; font-family: Gaegu, cursive; font-weight: 700; font-size: 40px; line-height: 40px;">news</h1>
+    <button style="min-height: 52px; padding: 0 18px; font: 600 18px/1 'Shantell Sans', cursive; background: #111111; color: #ffffff; border: 2.5px solid #111111; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; box-shadow: 3px 3px 0 #111111;">fetch now</button>
+  </div>
+  <div style="display: flex; align-items: center; gap: 8px; padding: 6px 4px 10px;">
+    <span style="font-size: 15px; line-height: 20px; color: #555555;">last fetched this morning at 7:02 · 23 new articles</span>
+  </div>
+  <svg width="560" height="6" viewBox="0 0 400 6" preserveAspectRatio="none" aria-hidden="true"><path d="M0.00 3.84 C4.17 3.62 16.67 2.77 25.00 2.51 C33.33 2.25 41.67 2.04 50.00 2.27 C58.33 2.51 66.67 3.96 75.00 3.90 C83.33 3.84 91.67 2.08 100.00 1.92 C108.33 1.76 116.67 2.73 125.00 2.93 C133.33 3.14 141.67 3.10 150.00 3.16 C158.33 3.23 166.67 3.50 175.00 3.31 C183.33 3.12 191.67 2.00 200.00 2.01 C208.33 2.02 216.67 3.20 225.00 3.37 C233.33 3.53 241.67 2.90 250.00 3.00 C258.33 3.10 266.67 4.20 275.00 3.98 C283.33 3.76 291.67 1.63 300.00 1.68 C308.33 1.73 316.67 4.21 325.00 4.28 C333.33 4.35 341.67 2.15 350.00 2.08 C358.33 2.02 366.67 3.72 375.00 3.88 C383.33 4.03 395.83 3.16 400.00 3.02" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+
+  <div style="display: flex; flex-direction: column; flex-grow: 1;">
+    <sc-for list="{{feeds}}" as="f" hint-placeholder-count="7">
+      <div style="display: flex; align-items: center; gap: 14px; min-height: 76px; border-bottom: 1.5px dashed #888888; padding: 0 4px;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;" aria-hidden="true"><path d="M3.00 6.03 L9.13 5.70 L10.95 8.15 L20.86 8.11 L20.58 13.45 L20.59 19.09 L14.83 19.10 L9.02 19.08 L3.26 19.19 L3.00 12.72 L3.04 5.93 L3.60 5.98"/><path d="M2.96 10.56 C4.45 10.52 8.97 10.28 11.92 10.32 C14.86 10.35 19.16 10.69 20.61 10.77"/></svg>
+        <div style="flex-grow: 1; min-width: 0;">
+          <div style="font-size: 18px; line-height: 26px; font-weight: 600;">{{f.name}}</div>
+          <div style="font-size: 15px; line-height: 20px; color: #555555;">{{f.topic}}</div>
+        </div>
+        <sc-if value="{{f.hasNew}}" hint-placeholder-val="{{true}}">
+          <span style="display: inline-block; font-weight: 600; font-size: 13px; line-height: 16px; letter-spacing: 0.04em; padding: 2px 8px 3px; background: #111111; color: #ffffff; border-radius: 6px; box-shadow: 2px 2px 0 #111111; transform: rotate({{f.tilt}});">{{f.count}}</span>
+        </sc-if>
+        <sc-if value="{{f.caughtUp}}" hint-placeholder-val="{{false}}">
+          <span style="font-size: 15px; line-height: 20px; color: #555555;">all read</span>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: center; gap: 8px; padding-top: 12px;">
+    <svg width="26" height="26" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24.03 41.35 C21.97 39.60 14.79 34.21 11.65 30.84 C8.51 27.48 5.79 24.36 5.20 21.13 C4.61 17.91 6.22 13.50 8.12 11.49 C10.02 9.47 13.87 8.04 16.59 9.02 C19.32 10.00 22.04 17.28 24.47 17.36 C26.91 17.43 28.62 10.50 31.20 9.47 C33.77 8.43 38.04 9.19 39.92 11.14 C41.80 13.09 43.11 17.87 42.47 21.15 C41.83 24.43 39.00 27.68 36.09 30.82 C33.18 33.95 26.87 38.42 25.03 39.94"/></svg>
+    <span style="font-size: 15px; line-height: 20px; color: #555555;">wi-fi turns off again after each fetch</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"night":{"editor":"boolean","default":false},"$preview":{"width":600,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var list = [
+      ['hundred rabbits', 'tools, sailing, permacomputing', 2],
+      ['quanta magazine', 'math, physics, biology', 5],
+      ['aeon', 'philosophy and long essays', 4],
+      ['noema', 'big ideas about the future', 3],
+      ['low-tech magazine', 'radical sustainability', 0],
+      ['the marginalian', 'art, literature, wonder', 6],
+      ['lobsters', 'programming', 3]
+    ];
+    return {
+      filter: this.props.night ? 'invert(1)' : 'none',
+      feeds: list.map(function (f, i) {
+        return { name: f[0], topic: f[1], count: f[2] + ' new', hasNew: f[2] > 0, caughtUp: f[2] === 0, tilt: i % 2 ? '1.5deg' : '-2deg' };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
