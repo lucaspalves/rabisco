@@ -40,18 +40,37 @@ Night mode is an exact inversion, the same thing KOReader's own night mode does,
 | **Font patch** | Switches the whole interface to Rabisco Hand, titles to Gaegu | `koreader/patches/2-rabisco-fonts.lua` |
 | **Marker patch** | Thicker borders and separators, softer corners on dialogs and buttons | `koreader/patches/2-rabisco-frames.lua` |
 | **Sleep screens** | Three sleep screen images for each common Kindle resolution | `koreader/screensaver/<resolution>/` |
+| **Installer** | A KOReader plugin that installs and updates all of the above over Wi-Fi | `koreader/plugins/rabisco.koplugin/` |
 
 The wobbly frames, hatching and stickers from the mockups are planned next: see [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Install
 
-You need a Kindle that already runs KOReader (jailbroken). Plug it into your computer over USB.
+You need a Kindle that already runs KOReader (jailbroken).
+
+### Over Wi-Fi, from the Kindle (recommended)
+
+The Rabisco installer downloads everything itself, and later brings updates the same way. It only has to be copied over once.
+
+1. **Copy the installer once.** Put the `rabisco.koplugin` folder (from `koreader/plugins/` in this repo) into `koreader/plugins/` on your Kindle. Use a computer, an Android phone with a USB OTG adapter, or KOReader's Cloud storage (Dropbox, WebDAV, FTP).
+2. **Restart KOReader.**
+3. **Install.** Main menu (☰) → More tools → **Rabisco** → **Install or update**. KOReader turns on Wi-Fi if needed, shows the size, and asks before downloading. If the connection drops, nothing is changed.
+4. **Restart when it asks.**
+5. **Sleep screens:** in the same Rabisco menu, tap **Use Rabisco sleep screens**. It picks the right size for your Kindle.
+6. **Reading font:** open a book, tap the bottom of the screen, choose the font (Aa) tab and pick **Literata**.
+
+To update later, tap **Install or update** again. **Remove Rabisco** in that menu deletes everything it installed except the installer.
+
+### By hand, with a computer
+
+Plug the Kindle into your computer over USB.
 
 1. **Copy the files.** Open the `koreader` folder in this repo and copy everything inside it into the `koreader` folder on your Kindle, merging folders when asked:
    - `fonts/rabisco/` → `koreader/fonts/rabisco/`
    - `icons/` → `koreader/icons/`
    - `patches/` → `koreader/patches/`
-   - `screensaver/` → anywhere you like, for example `koreader/screensaver/`
+   - `screensaver/` → `koreader/screensaver/`
+   - `plugins/rabisco.koplugin/` → `koreader/plugins/` (optional: the installer, for updates over Wi-Fi)
 2. **Eject the Kindle and restart KOReader** (top menu → main menu → Exit → Restart KOReader). The patches and icons load on start.
 3. **Pick the reading font.** Open a book, tap the bottom of the screen, choose the font (Aa) tab and pick **Literata**.
 4. **Set the sleep screen.** Top menu → Settings (gear) → Screen → Sleep screen → Wallpaper → *Show random image from folder on sleep screen*. Then under *Custom images* → *Choose random image folder*, pick the folder matching your Kindle:
@@ -98,6 +117,8 @@ python3 tools/build_fonts.py <path to google/fonts>/ofl koreader/fonts/rabisco  
 python3 tools/koreader_icons.py koreader/icons
 python3 tools/render_sleep.py koreader/screensaver                              # needs playwright + the fonts installed
 python3 tools/render_screens.py design/screens docs/screens                     # README images, same needs
+python3 tools/build_manifest.py                                                 # ALWAYS last: the installer's file list
+texlua tests/installer_harness.lua "$PWD/koreader" "$(mktemp -d)"               # installer end to end, offline
 texlua tests/patch_harness.lua koreader/patches present                         # any Lua 5.1+
 ```
 
